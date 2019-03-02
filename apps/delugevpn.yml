@@ -28,8 +28,11 @@
     - name: 'Including cron job'
       include_tasks: '/opt/communityapps/apps/_core.yml'
 
-    - name: 'Including folders'
+    - name: 'Including required folders'
       include_tasks: '/opt/communityapps/apps/_downloaders.yml'
+
+    - name: 'Including plugins'
+      include_tasks: '/opt/communityapps/apps/_plugins.yml'
 
     - name: 'Checking for existing app data'
       stat:
@@ -65,9 +68,9 @@
 #          ENABLE_PRIVOXY: no
 #          STRICT_PORT_FORWARD: no
           STRICT_PORT_FORWARD: 'yes'
-          ENABLE_PRIVOXY: 'True'
-          DELUGE_DAEMON_LOG_LEVEL: info
-          DELUGE_WEB_LOG_LEVEL: info
+          ENABLE_PRIVOXY: 'true'
+          DELUGE_DAEMON_LOG_LEVEL: 'info'
+          DELUGE_WEB_LOG_LEVEL: 'info'
 #          UMASK: 000
           DEBUG: false
 #          VPN_DEVICE_TYPE: tun

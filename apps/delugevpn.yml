@@ -58,13 +58,13 @@
         pg_env:
           PUID: '1000'
           PGID: '1000'
-          VPN_ENABLED: "True"
+          VPN_ENABLED: "yes"
           VPN_USER: vpnuser
           VPN_PASS: vpnpass
           VPN_PROV: pia|air-vpn|custom
 #          ENABLE_PRIVOXY: no
 #          STRICT_PORT_FORWARD: no
-          STRICT_PORT_FORWARD: "True"
+          STRICT_PORT_FORWARD: 'yes'
           ENABLE_PRIVOXY: 'True'
           DELUGE_DAEMON_LOG_LEVEL: info
           DELUGE_WEB_LOG_LEVEL: info

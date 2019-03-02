@@ -61,8 +61,15 @@
           VPN_USER: vpnuser
           VPN_PASS: vpnpass
           VPN_PROV: custom
-          ENABLE_PRIVOXY: no
-          STRICT_PORT_FORWARD: no
+   #       ENABLE_PRIVOXY: no
+  #        STRICT_PORT_FORWARD: no
+          STRICT_PORT_FORWARD: "yes"
+          STRONG_CERTS: "no"
+          ENABLE_PRIVOXY: "yes"
+          DEBUG: false
+          VPN_PORT: 1198
+          VPN_PROTOCOL: udp
+          VPN_DEVICE_TYPE: tun
           LAN_NETWORK: 192.168.1.1/24
 
     # MAIN DEPLOYMENT #############################################################

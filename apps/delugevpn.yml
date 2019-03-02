@@ -58,21 +58,19 @@
         pg_env:
           PUID: '1000'
           PGID: '1000'
-          VPN_ENABLED: yes
+          VPN_ENABLED: "yes"
           VPN_USER: vpnuser
           VPN_PASS: vpnpass
           VPN_PROV: pia|air-vpn|custom
-   #       ENABLE_PRIVOXY: no
-  #        STRICT_PORT_FORWARD: no
-          STRICT_PORT_FORWARD: yes
-          ENABLE_PRIVOXY: yes
+#          ENABLE_PRIVOXY: no
+#          STRICT_PORT_FORWARD: no
+          STRICT_PORT_FORWARD: "yes"
+          ENABLE_PRIVOXY: "yes"
           DELUGE_DAEMON_LOG_LEVEL: info
           DELUGE_WEB_LOG_LEVEL: info
- #         UMASK: 000
+#          UMASK: 000
           DEBUG: false
-          VPN_PORT: 1198
-          VPN_PROTOCOL: udp
-          VPN_DEVICE_TYPE: tun
+#          VPN_DEVICE_TYPE: tun
           LAN_NETWORK: 192.168.1.1/24
 
     # MAIN DEPLOYMENT #############################################################

@@ -3,13 +3,14 @@
   with_items:
     - '/opt/appdata/{{pgrole}}/scripts'
     - '/opt/appdata/{{pgrole}}/plugins'
+    - '/opt/appdata/{{pgrole}}/openvpn'
 
 - name: 'Check if Templates Exist for {{pgrole}}'
   stat:
     path: './templates/{{pgrole}}'
   register: copycheck
 
-- name: 'Copying Scripts & Plugins'
+- name: 'Copying Openvpn, Scripts & Plugins'
   copy:
     src: ./templates/{{pgrole}}
     dest: /opt/appdata

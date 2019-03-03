@@ -33,6 +33,12 @@
 
     - name: 'Including plugins'
       include_tasks: '/opt/communityapps/apps/_plugins.yml'
+      
+    - name: 'openvpn'
+      template:
+        src:  "deluge/openvpn"
+        dest: "/opt/appdate/{{pgrole}}/openvpn"
+        force:  "yes"
 
     - name: 'Checking for existing app data'
       stat:
@@ -113,7 +119,7 @@
         path: '/opt/appdata/{{pgrole}}/core.conf'
         state: present
         delay: 5
-
+        
     - name: Setting plugins directory
       lineinfile:
         path: '/opt/appdata/{{pgrole}}/core.conf'

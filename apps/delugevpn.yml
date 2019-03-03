@@ -32,7 +32,7 @@
       include_tasks: '/opt/communityapps/apps/_downloaders.yml'
 
     - name: 'Including plugins'
-      include_tasks: '/opt/communityapps/apps/_plugins.yml'
+      include_tasks: '/opt/communityapps/apps/_vpnplugins.yml'
       
     - name: 'openvpn'
       template:

@@ -58,6 +58,7 @@
       set_fact:
         pg_volumes:
           - '/opt/appdata/{{pgrole}}:/config'
+          - '/opt/appdata/{{pgrole}}/openvpn:/config/openvpn'
           - '{{path.stdout}}:{{path.stdout}}'
           - '/etc/localtime:/etc/localtime:ro'
           - '/mnt:/mnt'
@@ -74,9 +75,9 @@
 #          ENABLE_PRIVOXY: no
 #          STRICT_PORT_FORWARD: no
           STRICT_PORT_FORWARD: true
-          ENABLE_PRIVOXY: 'true'
+          ENABLE_PRIVOXY: True
           DELUGE_DAEMON_LOG_LEVEL: 'info'
-          DELUGE_WEB_LOG_LEVEL: 'info'
+          DELUGE_WEB_LOG_LEVEL: info
 #          UMASK: 000
           DEBUG: false
 #          VPN_DEVICE_TYPE: tun

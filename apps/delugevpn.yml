@@ -25,15 +25,16 @@
         image: 'binhex/arch-delugevpn'
 
     # CORE (MANDATORY) ############################################################
+
+    - name: 'Including plugins'
+      include_tasks: '/opt/communityapps/apps/_vpnplugins.yml'
+      
     - name: 'Including cron job'
       include_tasks: '/opt/communityapps/apps/_core.yml'
 
     - name: 'Including required folders'
       include_tasks: '/opt/communityapps/apps/_downloaders.yml'
-
-    - name: 'Including plugins'
-      include_tasks: '/opt/communityapps/apps/_vpnplugins.yml'
-      
+     
 #    - name: 'openvpn'
 #      template:
 #        src:  "deluge/openvpn"

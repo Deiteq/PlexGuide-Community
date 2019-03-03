@@ -34,11 +34,23 @@
     - name: 'Including plugins'
       include_tasks: '/opt/communityapps/apps/_vpnplugins.yml'
       
-    - name: 'openvpn'
+#    - name: 'openvpn'
+#      template:
+#        src:  "deluge/openvpn"
+#        dest: "/opt/appdate/{{pgrole}}/openvpn"
+#        force:  "yes"
+
+    - name: Copy default ovpn cert
       template:
-        src:  "deluge/openvpn"
-        dest: "/opt/appdate/{{pgrole}}/openvpn"
-        force:  "yes"
+        src: "ca.rsa.2048.crt"
+        dest: "/opt/appdata/{{pgrole}}/config/openvpn/ca.rsa.2048.crt"
+        force: yes
+
+    - name: Copy default ovpn pem
+      template:
+        src: "crl.rsa.2048.pem"
+        dest: "/opt/appdata/{{pgrole}}/openvpn/crl.rsa.2048.pem"
+        force: yes
 
     - name: 'Checking for existing app data'
       stat:

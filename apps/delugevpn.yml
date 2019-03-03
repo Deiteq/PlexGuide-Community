@@ -58,7 +58,6 @@
       set_fact:
         pg_volumes:
           - '/opt/appdata/{{pgrole}}:/config'
-          - '/opt/appdata/{{pgrole}}/openvpn:/config/openvpn'
           - '{{path.stdout}}:{{path.stdout}}'
           - '/etc/localtime:/etc/localtime:ro'
           - '/mnt:/mnt'
@@ -72,10 +71,9 @@
           VPN_USER: vpnuser
           VPN_PASS: vpnpass
           VPN_PROV: pia|air-vpn|custom
-#          ENABLE_PRIVOXY: no
+          ENABLE_PRIVOXY: yes
 #          STRICT_PORT_FORWARD: no
-          STRICT_PORT_FORWARD: true
-          ENABLE_PRIVOXY: True
+          STRICT_PORT_FORWARD: "true"
           DELUGE_DAEMON_LOG_LEVEL: 'info'
           DELUGE_WEB_LOG_LEVEL: info
 #          UMASK: 000
@@ -94,7 +92,7 @@
           - '{{ports.stdout}}{{extport2}}:{{intport2}}'
           - '{{ports.stdout}}{{extport3}}:{{intport3}}'
           - '{{ports.stdout}}{{extport4}}:{{intport4}}'
-        capabilities: 'NET_ADMIN' 
+        capabilities: "NET_ADMIN" 
         volumes: '{{pg_volumes}}'
         env: '{{pg_env}}'
         restart_policy: unless-stopped
